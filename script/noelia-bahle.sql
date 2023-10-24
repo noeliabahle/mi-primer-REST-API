@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2023 a las 23:35:28
+-- Tiempo de generación: 24-10-2023 a las 21:37:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `libros`
 --
--- Creación: 17-10-2023 a las 14:49:19
+-- Creación: 24-10-2023 a las 17:02:07
+-- Última actualización: 24-10-2023 a las 19:32:07
 --
 
 CREATE TABLE `libros` (
@@ -43,7 +44,9 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id`, `nombre`, `autor`, `categoria`, `anio_publicacion`, `ISBN`) VALUES
-(1, 'El cascanueces', 'Ernst Theodor Amadeus Hoffmann', 'Literatura fantástica', '2013-10-11', '1');
+(1, 'El cascanueces', 'Ernst Theodor Amadeus Hoffmann', 'Literatura fantástica', '1816-12-08', '9783401714721'),
+(4, 'El Principito', 'Antoine de Saint-Exupéry', 'Novela corta', '1943-04-06', '9783458200178'),
+(5, 'Mujercitas', 'Louisa May Alcott', 'Novela', '1868-09-30', '9788809810570');
 
 --
 -- Índices para tablas volcadas
@@ -53,7 +56,8 @@ INSERT INTO `libros` (`id`, `nombre`, `autor`, `categoria`, `anio_publicacion`, 
 -- Indices de la tabla `libros`
 --
 ALTER TABLE `libros`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ISBN` (`ISBN`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -63,7 +67,7 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
